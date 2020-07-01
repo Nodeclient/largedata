@@ -1,4 +1,4 @@
-# largedata (soon..)
+# largedata | ![npm](https://img.shields.io/npm/dt/largedata)
 
 ![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
