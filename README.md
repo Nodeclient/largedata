@@ -8,7 +8,7 @@
 - [x] getting form input element and data attributes
 - [x] multiple upload `if your hardware,network,etc.. capacity supports the large file requirements  , can uploaded infinity size.`
 - [x] setting up network speed `(for only clients)`
-- [x] live output upload & network stats "output: json"
+- [x] live output upload & network stats `(output: json)`
 
 Install - ```npm i largedata --save```
 
