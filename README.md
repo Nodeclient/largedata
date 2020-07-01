@@ -5,10 +5,10 @@
 ![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
 ## Features
-- [x] input data attributes
-- [x] input form elements
-- [x] upload large files (multiple)
+- [x] getting form input element and data attributes
+- [x] upload large file (multiple)
 - [x] setting up network speed
+- [x] live upload & network stats
 
 ```javascript
 function fancyAlert(arg) {
