@@ -12,7 +12,7 @@
 - [x] live output upload & network stats "output: json"
 
 Install - ```npm i largedata --save```
-
+---
 Node.Js -  ```server.js```
 
 ```javascript
@@ -47,7 +47,7 @@ const option = {
     }
   })
 ```
-
+---
 
 
 ### Large size , formdata and file uploads.
