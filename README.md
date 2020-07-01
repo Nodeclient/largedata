@@ -81,7 +81,7 @@ const option = {
 ---
 
 ### HTML - client.html
- > call in your html  `<script src="largedata.min.js"></script>`
+ > if your getting js path error then try to include full path `http://<your_url>/<api_url>/largedata.min.js`
 ```html
 <script>
       // OUTPUT DIV
