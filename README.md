@@ -37,10 +37,10 @@ const option = {
 ```javascript
   //Largedata  Application
   ld.formdata(option,function (fields,files){
-    if(files){ //Files info : It's only return the successful uploads
+    if(files){ // File Input (It's only returns the successful uploads)
      console.log(files);
     }
-    if(fields){ // Return the HTML input elements (excepting file input)
+    if(fields){ // HTML input elements (excepting "input file" in fields result)
       for (const items of fields) {
         console.log( items );
       }
