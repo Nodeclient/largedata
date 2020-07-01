@@ -61,6 +61,9 @@ const option = {
 ```
 
 `formdata (fields) paramater OUTPUT:`
+```html
+<input type='text' style="width: 100px;" name="mytex" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" />
+```
 ```bash
 {
   attribute: [
@@ -74,5 +77,39 @@ const option = {
  id: 'test_input',
  value: 'hello'
 }
+```
+---
+
+### HTML - client.html
+ > call in your html  `<script src="largedata.min.js"></script>`
+```html
+<script>
+      // OUTPUT DIV
+      var info_output = document.getElementById("info_div");
+    
+      //OPTIONS
+      const Options = {
+        form_id : "my_upload",    // Set your form id
+        speed : "8000",           // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
+        post_url : "/upload",     // your api url
+      }
+
+      SendForm = new LargeData(Options);
+
+      // SEND INPUT FILES
+      SendForm.upload(function( upload_stats , network_stats , err ) {
+        //OUTPUT DIV
+        info_output.innerHTML =  JSON.stringify(upload_stats) + "<br>" + JSON.stringify(network_stats) +  "<br>" + JSON.stringify(err)
+      })
+
+      // SEND INPUT ELEMENTS
+      SendForm.fields(function(form_data,err) {
+        //OUTPUT DIV
+        info_output.innerHTML = JSON.stringify(form_data)+ "<br>" + JSON.stringify(err)
+      }) 
+    
+</script>
+
+<script src="largedata.min.js"></script>
 ```
 
