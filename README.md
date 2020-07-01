@@ -40,7 +40,7 @@ const option = {
     if(files){ // File Input (It's only returns the successful uploads)
      console.log(files);
     }
-    if(fields){ // HTML input elements (excepting "input file" in fields result)
+    if(fields){ // HTML input elements (excepting "input file" element)
       for (const items of fields) {
         console.log( items );
       }
