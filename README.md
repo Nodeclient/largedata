@@ -78,7 +78,6 @@ const option = {
 ---
 
 ### HTML - client.html
- > if your getting js path issue then try to include full path `http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
 ```html
 <! DOCTYPE html >
 <html>
@@ -125,4 +124,5 @@ const option = {
 
 <script src="largedata.min.js"></script>
 ```
-
+ > if your getting js path issue then try to include full path 
+`http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
