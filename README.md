@@ -11,10 +11,6 @@
 - [x] setting up network speed `(for only clients)`
 - [x] live output upload & network stats `(output: js.object)`
 
-#### Future major updates
-	(reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
-
-
 Install - ```npm i largedata --save```
 
 ---
@@ -172,3 +168,7 @@ const option = {
  > if your had the path issue on browser side then try to include full path like `http://<your_host>/<api_url>/largedata.min.js` "or" `<api_url>/largedata.min.js`
 
 > network speed a valid only on the upload proccess. This option is unusable from for the sending form elements.
+
+
+#### Future major updates
+	(reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
