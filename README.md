@@ -11,7 +11,7 @@
 - [x] setting up network speed `(for only clients)`
 - [x] live output upload & network stats `(output: js.object)`
 
-#### Future updates
+#### Future major updates
 	(reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
 
 
