@@ -11,8 +11,12 @@
 - [x] setting up network speed
 - [x] live output upload & network stats "output: json"
 
+Install - ```npm i largedata --save```
+
+Node.Js -  ```server.js```
+
 ```javascript
-const lf = require('largedata').default;
+const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
@@ -22,8 +26,17 @@ const option = {
     parameter_limit:"10000" 
 }
 ```
+
 ```javascript
-  lf.formdata(option,function (fields,files){
+  // Express Application
+  app.use('/upload',ld.router,function (req, res, next) {
+    res.render("pages/index",{ title:"test" });
+  }) 
+```
+
+```javascript
+  //Largedata  Application
+  ld.formdata(option,function (fields,files){
     if(files){ //Files info : It's only return the successful uploads
      console.log(files);
     }
@@ -34,11 +47,7 @@ const option = {
     }
   })
 ```
-```javascript
-  app.use('/upload',lf.router,function (req, res, next) {
-    res.render("pages/index",{ title:"test" });
-  }) 
-```
+
 
 
 ### Large size , formdata and file uploads.
