@@ -71,7 +71,7 @@ const option = {
    { style: 'width: 100px;' },
    { name: 'test_input' },
    { large: 'your data attr' },
-   { test: 'some numbers attr 123456' },
+   { test: 'some numbers 123456' },
    { custom: 'your custom type' },
   ],
  id: 'test_input',
