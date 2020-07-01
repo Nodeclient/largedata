@@ -1,4 +1,4 @@
-# largedata 
+# largedata (beta)
 ### formdata and file uploads.
 ![npm](https://img.shields.io/npm/v/largedata.svg?style=flat) ![npm](https://img.shields.io/npm/dt/largedata) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
@@ -10,6 +10,8 @@
 - [x] multiple upload `if your hardware,network,etc.. capacity supports the large file requirements  , can uploaded infinity size`
 - [x] setting up network speed `(for only clients)`
 - [x] live output upload & network stats `(output: js.object)`
+
+- [ ] (reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
 
 Install - ```npm i largedata --save```
 
