@@ -1,6 +1,6 @@
 # largedata (soon..)
 
-![](image.png)
+![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
 - [x] Finish my changes
 - [ ] Push my commits to GitHub
