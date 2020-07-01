@@ -163,7 +163,9 @@ const option = {
  }
 }
 ```
- "Network.time" calculate only total size
- 
+ > "Network.time" calculate only total size
+
  > if your getting the path issue then try to include full path 
 `http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
+
+> network speed a valid only on the upload function. This option is unusable from for the sending form elements.
