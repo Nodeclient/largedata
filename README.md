@@ -49,6 +49,15 @@ const option = {
   })
 ```
 ---
+`formdata (files) paramater OUTPUT:`
+```JSON
+	{
+	  done: true,
+	  storage: './',
+	  name: 'test_10.iso',
+	  size: '10.00MB'
+	}
+```
 
 Node.js files testing and preparing to published
 
