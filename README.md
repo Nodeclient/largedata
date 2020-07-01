@@ -4,9 +4,19 @@
 
 ![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+## Support
+- [x] input data attributes
+- [x] input form elements
+- [x] upload large files (multiple)
+- [x] setting up network speed
+
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
 
 ### Large size , formdata and file uploads.
 Node.js files testing and preparing to published
