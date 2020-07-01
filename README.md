@@ -49,8 +49,8 @@ const option = {
   })
 ```
 ---
-### server side
-`formdata (files) paramater OUTPUT:`
+### server.js "files,fields" sample output
+`formdata (files) paramater :`
 ```bash
  {
   done: true,
@@ -60,7 +60,7 @@ const option = {
  }
 ```
 
-`formdata (fields) paramater OUTPUT:`
+`formdata (fields) paramater :`
 ```bash
 {
   attribute: [
