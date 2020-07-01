@@ -4,7 +4,7 @@
 
 ![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
-## Support
+## Features
 - [x] input data attributes
 - [x] input form elements
 - [x] upload large files (multiple)
