@@ -49,15 +49,30 @@ const option = {
   })
 ```
 ---
+### server side
 `formdata (files) paramater OUTPUT:`
-```JSON
-	{
-	  done: true,
-	  storage: './',
-	  name: 'test_10.iso',
-	  size: '10.00MB'
-	}
+```bash
+ {
+  done: true,
+  storage: './',
+  name: 'test_10.iso',
+  size: '10.00MB'
+ }
 ```
 
-Node.js files testing and preparing to published
+`formdata (fields) paramater OUTPUT:`
+```bash
+{
+  attribute: [
+   { type: 'text' },
+   { style: 'width: 100px;' },
+   { name: 'test_input' },
+   { large: 'your data attr' },
+   { test: 'some numbers attr 123456' },
+   { custom: 'your custom type' },
+  ],
+ id: 'test_input',
+ value: 'hello'
+}
+```
 
