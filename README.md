@@ -124,5 +124,46 @@ const option = {
 
 <script src="largedata.min.js"></script>
 ```
+
+### HTML - client.html (network,upload,error) stats sample output
+`Uploaded files list`
+```bash
+ { 
+  "code":"0003",
+  "msg":"FINISHED",
+    "list":[
+        {"name":"test_text_100.txt","size":"100.0MB","mime":"text/plain"},
+        {"name":"test_iso_1.iso","size":"1.0GB","mime":""},
+        {"name":"test_video_5.mp4","size":"5.0GB","mime":"video/mp4"},
+    ]
+ }
+```
+
+`Upload stat`
+```bash
+ { 
+   "code":"0004",
+   "msg":"UPLOADING",
+   "name":"test_video_5.mp4",
+   "percent":"20"
+ }
+```
+
+`Network stat`
+```bash
+{ 
+  "network": { 
+      "speed":"1.0",
+	  "prefix":"Mbps",
+	  "type":"ADSL,LAN,3G,4G"
+   },
+ "time": {
+    "hour":"1",
+    "minute":"20" 
+ }
+}
+```
+ "Network.time" calculate only total size
+ 
  > if your getting the path issue then try to include full path 
 `http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
