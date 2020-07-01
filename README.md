@@ -30,7 +30,7 @@ const option = {
 ```javascript
   // Express Application
   app.use('/upload',ld.router,function (req, res, next) {
-    res.render("pages/index",{ title:"test" });
+    res.render("pages/index",{ title:"render your upload html" });
   }) 
 ```
 
