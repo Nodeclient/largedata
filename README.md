@@ -6,8 +6,7 @@
 
 ## Features
 - [x] getting form input element and data attributes
-- [x] multiple large file 
-      "if your hardware,network,etc.. capacity supports the large file requirements  , can uploaded infinity size."
+- [x] multiple upload `if your hardware,network,etc.. capacity supports the large file requirements  , can uploaded infinity size.`
 - [x] setting up network speed
 - [x] live output upload & network stats "output: json"
 
