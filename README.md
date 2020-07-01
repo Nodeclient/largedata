@@ -12,12 +12,34 @@
 - [x] live output upload & network stats "output: json"
 
 ```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
+const lf = require('largedata').default;
+```
+```javascript
+const option = { 
+    encoding:'binary', 
+    request_size:"1gb",
+    storage:"./", 
+    parameter_limit:"10000" 
 }
 ```
+```javascript
+  lf.formdata(option,function (fields,files){
+    if(files){ //Files info : It's only return the successful uploads
+     console.log(files);
+    }
+    if(fields){ // Return the HTML input elements (excepting file input)
+      for (const items of fields) {
+        console.log( items );
+      }
+    }
+  })
+```
+```javascript
+  app.use('/upload',lf.router,function (req, res, next) {
+    res.render("pages/index",{ title:"test" });
+  }) 
+```
+
 
 ### Large size , formdata and file uploads.
 Node.js files testing and preparing to published
