@@ -80,16 +80,17 @@ const option = {
 ### HTML - client.html
  > if your getting js path error then try to include full path `http://<your_url>/<api_url>/largedata.min.js`
 ```html
-
+<! DOCTYPE html >
+<html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <center>
   <form id="my_upload">
     <input type='range' id="your_range"  /><br>
-    <input type='text' style="width: 100px;" name="mytex" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br>
+    <input type='text' style="width: 100px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br>
     <input type='file' multiple /><br>
       <input type="button" id="send" value="Submit"/>
       <br>
-    <div id='info_div' />
+    <div id='output_div' />
   </form>
   </center>
 </html>
@@ -97,7 +98,7 @@ const option = {
 <script>
     jQuery('#send').click(function(){
       // OUTPUT DIV
-      var info_output = document.getElementById("info_div");
+      var info_output = document.getElementById("output_div");
     
       //OPTIONS
       const Options = {
