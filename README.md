@@ -165,7 +165,7 @@ const option = {
  }
 }
 ```
- > "Network stat: time(hour,minute)" only total time required to upload is calculated , does not calculate remaining time!
+ > "Network stat: time(hour,minute)" only total time required to upload is calculated , does not calculate remaining realtime!
 
  > if you had the path issue on the browser side then you can try to include full path like `http://<your_host>/<api_url>/largedata.min.js` "or" `<api_url>/largedata.min.js`
 
