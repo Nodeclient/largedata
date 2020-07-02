@@ -2,7 +2,7 @@
 ### formdata and file uploads.
 ![npm](https://img.shields.io/npm/v/largedata.svg?style=flat) ![npm](https://img.shields.io/npm/dt/largedata) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
+![logo](https://raw.githubusercontent.com/Nodeclient/largedata/master/image.png)
 
 ## Features
 - [x] getting form input element and data attributes
