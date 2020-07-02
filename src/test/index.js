@@ -7,6 +7,7 @@ const app = express();
 const option = {
     encoding: 'binary',
     request_size: "1gb",
+    overwrite: true,
     storage: "./",
     parameter_limit: "10000"
 };
