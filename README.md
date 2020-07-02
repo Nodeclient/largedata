@@ -2,7 +2,6 @@
 ### formdata and file uploads.
 ![npm](https://img.shields.io/npm/v/largedata.svg?style=flat) ![npm](https://img.shields.io/npm/dt/largedata) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-
 ![logo](https://github.com/Nodeclient/largedata/blob/master/image.png)
 
 ## Features
@@ -12,6 +11,9 @@
 - [x] live output upload & network stats `(output: js.object)`
 
 Install - ```npm i largedata --save```
+
+### Sample server project:
+[Sample Project](https://git.io/JJUck) or ***@github***/largedata/sample_upload_project/
 
 ---
 Node.Js -  ```server.js```
