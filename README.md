@@ -10,7 +10,8 @@
 - [x] setting up network speed `(for only clients)`
 - [x] live output upload & network stats `(output: object)`
 
-- [x] **NEW! option** overwrite ("false") : `if trying to upload same file name then overwrite is canceled and client upload attempt is rejected too ..`
+#### *NEW! option(overwrite)*  `if option set the "false" : you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` default: true
+---
 
 Install - ```npm i largedata --save```
 
