@@ -169,9 +169,9 @@ const option = {
  }
 }
 ```
- > "Network stat: time(hour,minute)" only total time required to upload is calculated , does not calculate remaining realtime!
+ > "timeleft (hour,minute)" : does not calculate realtime!
 
- > if you had the path issue on the browser side then you can try to include full path like `http://<your_host>/<api_url>/largedata.min.js` "or" `<api_url>/largedata.min.js`
+ > if you had the path issue on the browser side then you can try to include full path like `http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
 
 > network speed a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
