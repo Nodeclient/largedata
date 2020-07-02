@@ -24,7 +24,7 @@ const option = {
   })  
 
   ld.formdata(option,function (fields,files){
-    if(files){ // File input element (It's only returns the successful uploads)
+    if(files){ // Input file element (It's only returns the successful uploads)
       console.log(files);
     }
     if(fields){ // HTML input elements (excepting "input file element")
