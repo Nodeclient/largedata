@@ -4,10 +4,11 @@ const ld = require('largedata').default;
 const app = express();
 
 const option = { 
-    encoding:'binary',      // file encode type
-    request_size:"1gb",     // for each blob "not a total size"
-    storage:"./",           // your file is saved in this folder
-    parameter_limit:"10000" // express.js option
+    encoding:'binary',  //file encoder
+    request_size:"1gb", //for each blob
+    storage:"./",      //uploaded files
+    parameter_limit:"10000",
+    overwrite: true   // default:true
 }
 
   app.set('views', path.join(process.cwd(),'views') )
