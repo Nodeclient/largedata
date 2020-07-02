@@ -8,7 +8,9 @@
 - [x] getting form input element and data attributes
 - [x] multiple upload
 - [x] setting up network speed `(for only clients)`
-- [x] live output upload & network stats `(output: js.object)`
+- [x] live output upload & network stats `(output: object)`
+
+- [x] **NEW! option** overwrite ("false") : `if trying to upload same file name then overwrite is canceled and client upload attempt is rejected too ..`
 
 Install - ```npm i largedata --save```
 
@@ -23,10 +25,11 @@ const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
-    encoding:'binary', 
-    request_size:"1gb",
-    storage:"./", 
-    parameter_limit:"10000" 
+    encoding:'binary',  //file encode
+    request_size:"1gb", //for each per blob
+    storage:"./",      //saved upload files
+    parameter_limit:"10000",
+    overwrite: true   // default:true
 }
 ```
 
