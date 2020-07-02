@@ -26,9 +26,9 @@ const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
-    encoding:'binary',  //file encode
-    request_size:"1gb", //for each per blob
-    storage:"./",      //saved upload files
+    encoding:'binary',  //file encoder
+    request_size:"1gb", //for each blob
+    storage:"./",      //uploaded files
     parameter_limit:"10000",
     overwrite: true   // default:true
 }
