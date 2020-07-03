@@ -9,9 +9,7 @@
 - [x] multiple upload
 - [x] setting up network speed `(for only clients)`
 - [x] live output upload & network stats `(output: object)`
-
-#### *NEW! option(overwrite)*  `if option set the "false" : you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` default: true
----
+- [x] overwrite mode
 
 Install - ```npm i largedata --save```
 
@@ -91,10 +89,10 @@ const option = {
 <center>
   <form id="my_upload">
     <input type='range' id="your_range"  /><br>
-    <input type='text' style="width: 100px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br>
-    <input type='file' multiple /><br>
+    <input type='text' style="width: 100px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br><br>
+    <input type='file' multiple />
       <input type="button" id="send" value="Submit"/>
-      <br>
+      <br><br>
     <div id='output_div' />
   </form>
   </center>
@@ -169,12 +167,15 @@ const option = {
  }
 }
 ```
+
  > "timeleft (hour,minute)" : does not calculate realtime!
 
  > if you had the path issue on the browser side then you can try to include full path like `http://<your_host>/<api_url>/largedata.min.js` or `<api_url>/largedata.min.js`
 
 > network speed a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
+
+> option(overwrite) default: true  `if option set the "false" : you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` 
 
 #### Future major updates
 	(reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
