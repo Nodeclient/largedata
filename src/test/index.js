@@ -7,7 +7,7 @@ const app = express();
 const option = {
     encoding: 'binary',
     request_size: "1gb",
-    overwrite: true,
+    overwrite: false,
     storage: "./",
     parameter_limit: "10000"
 };
@@ -18,7 +18,7 @@ app.use(express.json({ limit: option.request_size }));
 app.use('/upload', lf.router, function (req, res, next) {
     res.render("pages/index", { title: "test" });
 });
-lf.formdata(option, function (fields, files) {
+lf.formdata(option, function (fields, files, client) {
     if (files) { // Files info : It's only return the completed uploads
         console.log(files);
     }
@@ -27,6 +27,10 @@ lf.formdata(option, function (fields, files) {
             console.log(items);
         }
     }
+    client.post({
+        hello: "Good Morning",
+        language_test: "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
+    }); // data post to client (form fields : object)
 });
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');

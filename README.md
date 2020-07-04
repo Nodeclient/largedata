@@ -52,11 +52,11 @@ const option = {
         console.log( items );
       }
     }
-	    client.post({ // NEW
-		hello: "Good Morning",
-		language_test: "testing some different languages :> Günaydın, доброе утро, 
-		शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
-	    });  // Post a data-object
+	  client.post({ // NEW
+		  hello: "Good Morning",
+		  language_test: "testing some different languages :> Günaydın, доброе утро, 
+		  शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
+	  });  // Post a data-object (status:0005)
   })
 ```
 ---
