@@ -56,7 +56,7 @@ const option = {
 		hello: "Good Morning",
 		language_test: "testing some different languages :> Günaydın, доброе утро, 
 		शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
-	    });  // Post data-object
+	    });  // Post a data-object
   })
 ```
 ---
