@@ -24,7 +24,7 @@ const option = {
     res.render("pages/index",{ title:"your upload test" });
   })  
 
-  ld.formdata(option,function (fields,files){
+  ld.formdata(option,function (fields,files,client){
     if(files){ // Input file element (It's only returns the successful uploads)
       console.log(files);
     }
@@ -33,6 +33,7 @@ const option = {
         console.log( items );
       }
     }
+      client.send( { hello:"Good Morning" , language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" });
   })
 
   app.listen(3000, function () {
