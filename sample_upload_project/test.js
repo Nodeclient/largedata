@@ -1,14 +1,15 @@
+/*last update 1.0.4*/
 const express = require('express');
 const path = require('path');
 const ld = require('largedata').default;
 const app = express();
 
 const option = { 
-    encoding:'binary',  //file encoder
-    request_size:"1gb", //for each blob
-    storage:"./",      //uploaded files
-    parameter_limit:"10000",
-    overwrite: true   // default:true
+    encoding:'binary',      // file encode type
+    request_size:"1gb",     // for each blob "not a total size"
+    storage:"./",           // your file is saved in this folder
+    parameter_limit:"10000", // express.js option
+	  overwrite: false 
 }
 
   app.set('views', path.join(process.cwd(),'views') )
@@ -25,7 +26,7 @@ const option = {
   })  
 
   ld.formdata(option,function (fields,files,client){
-    if(files){ // Input file element (It's only returns the successful uploads)
+    if(files){ // File input element (It's only returns the successful uploads)
       console.log(files);
     }
     if(fields){ // HTML input elements (excepting "input file element")
@@ -33,12 +34,12 @@ const option = {
         console.log( items );
       }
     }
-      
-    client.post( { 
-      hello:"Good Morning" , 
-      language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" 
-    });
-      
+    
+    client.post({
+        hello: "Good Morning",
+        language_test: "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
+    }); // send data-object from server to client
+
   })
 
   app.listen(3000, function () {
