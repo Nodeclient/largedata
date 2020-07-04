@@ -171,7 +171,7 @@ const option = {
  > "timeleft" : does not calculate realtime! is calculated only one-time  
     `why time-left is designed one-time ? because it takes more resources to calculate this in real time than it does now, this is best way for perform.`
 
- > if you had the path issue on the browser side then you can try add the full path to the <script> tag `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
+ > if you had the path issue on the browser side then you can try changing "script src tag" to full path like `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
 > network speed a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
