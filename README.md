@@ -50,6 +50,10 @@ const option = {
         console.log( items );
       }
     }
+	form.send({ 
+	  hello:"Good Morning" , 
+	  language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" 
+	});
   })
 ```
 ---
@@ -100,36 +104,41 @@ const option = {
 
 <script>
     jQuery('#send').click(function(){
-      // OUTPUT DIV
-      var info_output = document.getElementById("output_div");
-    
+      // OUTPUT_DIV
+      var info_output = document.getElementById("info_div");
       //OPTIONS
       const Options = {
-        form_id : "my_upload",    // Set your form id
-        speed : "8000",           // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
-        post_url : "/upload",     // your api url
+        form_id : "my_upload",    // Form id
+        speed : "8000",          // Network speed type(Kbps) -> 1000Kbps = 1Mbps
+        post_url : "/upload",   // Post data url
       }
-
       SendForm = new LargeData(Options);
-
-      // SEND INPUT FILES
+      //UPLOAD INPUT FILES
       SendForm.upload(function( upload_stats , network_stats , err ) {
-        //OUTPUT DIV
-        info_output.innerHTML =  JSON.stringify(upload_stats) + "<br>" + JSON.stringify(network_stats) +  "<br>" + JSON.stringify(err)
+	//OUTPUT_DIV
+        info_output.innerHTML = JSON.stringify(upload_stats) + "<br>" + 
+		JSON.stringify(network_stats)+"<br>" + JSON.stringify(err)
       })
-
-      // SEND INPUT ELEMENTS
-      SendForm.fields(function(form_data,err) {
-        //OUTPUT DIV
-        info_output.innerHTML = JSON.stringify(form_data)+ "<br>" + JSON.stringify(err)
+      // SEND INPUT FIELDS
+      SendForm.fields(function(form,err) {
+	//OUTPUT_DIV
+       	info_output.innerHTML = JSON.stringify(form) + "<br>" + JSON.stringify(err)
       }) 
-  });
+    });
 </script>
 
 <script src="largedata.min.js"></script>
 ```
 
 ### HTML - client.html (network,upload,error) stats sample output
+`Form Send (Success return)`
+```bash
+{ "code":"0005","msg":"SUCCESS","response":{
+	"hello":"Good Morning",
+	"language_test":"testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
+}
+```
+
 `Uploaded files list`
 ```bash
  { 
