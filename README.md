@@ -11,6 +11,8 @@
 - [x] realtime stats
 - [x] overwrite mode
 
+`New Option : client.post` **send data-object from server to client***
+
 Install - ```npm i largedata --save```
 
 ### Sample server project:
@@ -50,10 +52,10 @@ const option = {
         console.log( items );
       }
     }
-	client.send({ 
-	  hello:"Good Morning" , 
-	  language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" 
-	});
+	    client.post({ // NEW
+		hello: "Good Morning",
+		language_test: "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
+	    });  // Post data-object to client (type: object)
   })
 ```
 ---
@@ -131,7 +133,7 @@ const option = {
 ```
 
 ### HTML - client.html (network,upload,error) stats sample output
-`Form Send (return)`
+`data-object (status:0005)`
 ```bash
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
