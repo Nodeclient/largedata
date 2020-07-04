@@ -175,5 +175,5 @@ const option = {
 > network speed a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
 
-> option(overwrite) default: true  `if option set the "false" : you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` 
+> option(overwrite) default: true  `if set the "false" , you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` 
 
