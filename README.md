@@ -131,7 +131,7 @@ const option = {
 ```
 
 ### HTML - client.html (network,upload,error) stats sample output
-`Form Send (Success return)`
+`Form (Success return variables)`
 ```bash
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
