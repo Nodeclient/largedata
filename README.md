@@ -8,7 +8,7 @@
 - [x] getting form input element and data attributes
 - [x] multiple upload
 - [x] setting up network speed `(for only clients)`
-- [x] live output upload & network stats `(output: object)`
+- [x] realtime stats
 - [x] overwrite mode
 
 Install - ```npm i largedata --save```
