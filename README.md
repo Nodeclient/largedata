@@ -177,5 +177,3 @@ const option = {
 
 > option(overwrite) default: true  `if option set the "false" : you can't upload file with same filename , overwrite is canceled and client upload attempt is rejected too .` 
 
-#### Future major updates
-	(reject,allow) upload options , limited mimetypes  , blacklists and whitelists , folder quota -> `still in development`
