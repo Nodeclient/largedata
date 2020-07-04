@@ -143,7 +143,7 @@ const option = {
  }
 ```
 
-`Upload stat`
+`Upload stat (realtime)`
 ```bash
  { 
    "code":"0004",
@@ -153,7 +153,7 @@ const option = {
  }
 ```
 
-`Network stat`
+`Network stat (static)`
 ```bash
 { 
   "network": { 
