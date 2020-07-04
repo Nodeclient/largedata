@@ -147,13 +147,13 @@ var formdata = (Options, call) => {
         const p_ = path.join(__dirname, "..", "tool", "browser.plug");
         if (_d.existsSync(p_)) {
             if (ufjs) {
-                return ufjs; //Memory
+                return ufjs;
             } else {
                 ufjs = _d.readFileSync(p_, {
                     encoding: 'utf8',
                     flag: 'r'
                 });
-                return ufjs; //Drive
+                return ufjs; 
             }
         } else {
             return false;
