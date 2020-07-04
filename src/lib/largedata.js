@@ -1,7 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.formdata = exports.router = void 0;
 const _d = require("fs");
 const path = require("path");
@@ -27,17 +25,17 @@ class CreatProccess {
             pr_enc: this.pr_enc
         };
         var _calc = (b) => {
-            let by = b / Math.pow(1024, 0),
-                kb = b / Math.pow(1024, 1),
-                mb = b / Math.pow(1024, 2),
-                gb = b / Math.pow(1024, 3);
+            let by = b / Math.pow(1024, 0), kb = b / Math.pow(1024, 1), mb = b / Math.pow(1024, 2), gb = b / Math.pow(1024, 3);
             if (gb > 0.99) {
                 return String((gb).toFixed(2)).concat("GB");
-            } else if (mb > 0.99) {
+            }
+            else if (mb > 0.99) {
                 return String((mb).toFixed(2)).concat("MB");
-            } else if (kb > 0.99) {
+            }
+            else if (kb > 0.99) {
                 return String((kb).toFixed(2)).concat("KB");
-            } else if (kb < 0.99) {
+            }
+            else if (kb < 0.99) {
                 return String(by).concat("B");
             }
         };
@@ -90,15 +88,17 @@ var formdata = (Options, call) => {
                 IsSync.exists = _d.existsSync(cupth) || false;
                 IsSync.file = routa.data.name;
                 IsChecked = true;
-                if (file_skip) {
+                if (file_skip && IsSync.exists) {
                     _d.unlinkSync(cupth);
-                };
+                }
+                ;
             }
             if (!file_skip && IsSync.exists) {
                 res.statusMessage = "Upload were rejected because the file name already exists '" + IsSync.file + "' ";
                 res.sendStatus(403).end();
                 IsChecked = false;
-            } else {
+            }
+            else {
                 res.end();
                 new CreatProccess(file_encoding, upload_path, routa).done(function (a, b) {
                     call(a, b);
@@ -111,7 +111,8 @@ var formdata = (Options, call) => {
         res.set('Content-Type', 'text/javascript');
         if (content) {
             res.send(content);
-        } else {
+        }
+        else {
             res.status(404).send({
                 code: "8010",
                 error: "File System Error!"
@@ -126,9 +127,11 @@ var formdata = (Options, call) => {
     router.get("*", function (req, res, next) {
         if (req.baseUrl == req.originalUrl) {
             res.redirect(req.baseUrl + "/");
-        } else if (routaMap.indexOf(req.url) != -1) {
+        }
+        else if (routaMap.indexOf(req.url) != -1) {
             next();
-        } else {
+        }
+        else {
             res.status(404).send({
                 code: "404",
                 error: "Not Found!"
@@ -139,15 +142,17 @@ var formdata = (Options, call) => {
         const p_ = path.join(__dirname, "..", "tool", "browser.plug");
         if (_d.existsSync(p_)) {
             if (ufjs) {
-                return ufjs;
-            } else {
+                return ufjs; //Memory
+            }
+            else {
                 ufjs = _d.readFileSync(p_, {
                     encoding: 'utf8',
                     flag: 'r'
                 });
-                return ufjs;
+                return ufjs; //Drive
             }
-        } else {
+        }
+        else {
             return false;
         }
     };
