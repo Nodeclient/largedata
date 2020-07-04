@@ -33,7 +33,12 @@ const option = {
         console.log( items );
       }
     }
-      client.send( { hello:"Good Morning" , language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" });
+      
+    client.post( { 
+      hello:"Good Morning" , 
+      language_test : "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành" 
+    }); // data post to client (form fields : object)
+      
   })
 
   app.listen(3000, function () {
