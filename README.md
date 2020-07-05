@@ -145,6 +145,15 @@ const option = {
     ]
 }
 ```
+`FormData (send)`
+```js
+{ "code":"0005","msg":"SUCCESS","response":{
+	"hello":"Good Morning",
+	"language_test":"testing some different languages :> Günaydın, доброе утро, 
+		शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
+}
+```
+
 `Upload stat (realtime)`
 
 ```js
@@ -153,12 +162,6 @@ const option = {
    "msg":"UPLOADING",
    "name":"test_video_5.mp4",
    "percent":"20"
-}
- 
-{ "code":"0005","msg":"SUCCESS","response":{
-	"hello":"Good Morning",
-	"language_test":"testing some different languages :> Günaydın, доброе утро, 
-		शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
 }
 ```
 `Network stat (static)`
