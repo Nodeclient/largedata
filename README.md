@@ -134,14 +134,6 @@ const option = {
 ```
 
 ### HTML - client.html (network,upload,error) stats sample output
-`data-object (status:0005)`
-```bash
-{ "code":"0005","msg":"SUCCESS","response":{
-	"hello":"Good Morning",
-	"language_test":"testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
-}
-```
-
 `Uploaded files list`
 ```bash
  { 
@@ -163,8 +155,12 @@ const option = {
    "name":"test_video_5.mp4",
    "percent":"20"
  }
+ 
+{ "code":"0005","msg":"SUCCESS","response":{
+	"hello":"Good Morning",
+	"language_test":"testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
+}
 ```
-
 `Network stat (static)`
 ```bash
 { 
