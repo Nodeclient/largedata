@@ -62,7 +62,7 @@ const option = {
 ---
 ### server.js "files,fields" sample output
 `formdata (files) paramater :`
-```bash
+```js
  {
   done: true,
   storage: './',
@@ -72,7 +72,7 @@ const option = {
 ```
 
 `formdata (fields) paramater :`
-```bash
+```js
 {
   attribute: [
    { type: 'text' },
@@ -135,8 +135,9 @@ const option = {
 
 ### HTML - client.html (network,upload,error) stats sample output
 `Uploaded files list`
-```bash
- { 
+
+```js
+{ 
   "code":"0003",
   "msg":"FINISHED",
     "list":[
@@ -144,25 +145,27 @@ const option = {
         {"name":"test_iso_1.iso","size":"1.0GB","mime":""},
         {"name":"test_video_5.mp4","size":"5.0GB","mime":"video/mp4"},
     ]
- }
+}
 ```
-
 `Upload stat (realtime)`
-```bash
- { 
+
+```js
+{ 
    "code":"0004",
    "msg":"UPLOADING",
    "name":"test_video_5.mp4",
    "percent":"20"
- }
+}
  
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
-	"language_test":"testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
+	"language_test":"testing some different languages :> Günaydın, доброе утро, 
+		शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"}
 }
 ```
 `Network stat (static)`
-```bash
+
+```js
 { 
   "network": { 
       "speed":"1.0",
