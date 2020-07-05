@@ -1,6 +1,6 @@
 {
   "name": "largedata",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "formdata and file uploads.",
   "main": "index.js",
   "scripts": {

@@ -1,24 +1,23 @@
-/*last update 1.0.4*/
 const express = require('express');
 const path = require('path');
 const ld = require('largedata').default;
 const app = express();
 
-const option = { 
-    encoding:'binary',      // file encode type
-    request_size:"1gb",     // for each blob
-    storage:"./",           // uploaded files
-    parameter_limit:"10000", 
-    overwrite: true        //true
-}
-
+	const option = { 
+		encoding:'binary',       // file encode type
+		request_size:"1gb",      // for each blob "not a total size"
+		storage:"./upload",      // your file is saved in this folder
+		parameter_limit:"10000", // express.js option
+		overwrite: true 
+	}
+	
   app.set('views', path.join(process.cwd(),'views') )
   app.set('view engine', 'ejs');
   app.use(express.urlencoded({ limit: option.request_size , extended: true }))
   app.use(express.json({ limit: option.request_size  }));
   
-  app.get('/',ld.router,function (req, res, next) {
-    res.send("<center>let's go > <a href=/upload>upload test</a></center>")
+  app.get('/',function (req, res, next) {
+    res.send("<center> let's go > <a href=/upload>upload test</a></center>")
   }) 
 
   app.use('/upload',ld.router,function (req, res, next) {
