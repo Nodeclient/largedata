@@ -145,7 +145,7 @@ const option = {
     ]
 }
 ```
-`FormData (send)`
+`FormData (response)`
 ```js
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
