@@ -7,7 +7,7 @@ const app = express();
 const option = { 
     encoding:'binary',      // file encode type
     request_size:"1gb",     // for each blob
-    storage:"./",           // uploaded files
+    storage:"./upload",           // uploaded files
     parameter_limit:"10000", 
     overwrite: true        //true
 }
