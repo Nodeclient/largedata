@@ -190,4 +190,4 @@ const option = {
 
 > **overwrite** mode (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
 
-Build: `Node.js,Js,WebApi`
+Build: `Node.js,Ts,Js,WebApi`
