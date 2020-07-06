@@ -11,7 +11,7 @@
 - [x] realtime stats
 - [x] overwrite mode
 
-> ***New Option : 1.0.7*** mime_types `accepts only your own mime-type list for upload.`
+> ***New Option : 1.0.7 (soon)*** mime_types `accepts only your own mime-type list for upload.`
 ```js
      mime_types : [ 
      	"application/javascript", "application/json", "application/zip", 
