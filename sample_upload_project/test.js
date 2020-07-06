@@ -8,7 +8,8 @@ const app = express();
 		request_size:"1gb",      // for each blob "not a total size"
 		storage:"./upload",      // your file is saved in this folder
 		parameter_limit:"10000", // express.js option
-		overwrite: true 
+		overwrite: true,
+		mime_types : [ "application/javascript","image/png","text/plain" ] // accept list
 	}
 	
   app.set('views', path.join(process.cwd(),'views') )
