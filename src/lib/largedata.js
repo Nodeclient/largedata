@@ -4,11 +4,17 @@ exports.formdata = exports.router = void 0;
 const _d = require("fs");
 const path = require("path");
 const express = require("express");
+let existMap = new Map();
 var ufjs = null;
 const router = express.Router({
     strict: true
 });
 exports.router = router;
+var IsSync = {
+    file: "undefined",
+    exists: false,
+    temp: false
+};
 var formdata = (Options, call) => {
     var chunk_Size = 0x0;
     var IsChecked = false;
@@ -18,10 +24,7 @@ var formdata = (Options, call) => {
     var parameter_Limit = Options.parameter_limit || "500000";
     var file_encoding = Options.encoding || "binary";
     var file_skip = (Options.overwrite == false) ? false : true;
-    var IsSync = {
-        file: "undefined",
-        exists: false
-    };
+    var trust_mime_list = Options.mime_types || [];
     router.use(express.json({
         limit: max_chunk_size
     }));
@@ -34,43 +37,72 @@ var formdata = (Options, call) => {
         const routa = req.body;
         if (typeof routa.field != "undefined") {
             if (typeof routa.data == "undefined") {
-                const client = { post: (data) => { res.send(data); } };
+                const client = {
+                    post: (data) => {
+                        (data || false) ? res.send(data) : res.end();
+                    }
+                };
                 call(routa.field || false, false, client);
-                res.end();
+                client.post(false);
             }
         }
         if (typeof routa.data != "undefined") {
+            if (_cm(routa.data.type, trust_mime_list) == 0) {
+                res.statusMessage = "Mime-type not being accepted for upload !";
+                res.sendStatus(403).end();
+                return false;
+            }
             if (!IsChecked) {
-                const cupth = path.join(upload_path, routa.data.name);
-                IsSync.exists = _d.existsSync(cupth) || false;
-                IsSync.file = routa.data.name;
+                chunk_Size = 0x0;
                 IsChecked = true;
+                IsSync.exists = _d.existsSync(path.join(upload_path, routa.data.name));
+                IsSync.file = routa.data.name;
                 if (file_skip && IsSync.exists) {
-                    _d.unlinkSync(cupth);
+                    _d.unlinkSync(path.join(upload_path, routa.data.name));
                 }
-                ;
+                if (_d.existsSync(path.join(upload_path, String(routa.data.name).concat(".upload")))) {
+                    _d.unlinkSync(path.join(upload_path, String(routa.data.name).concat(".upload")));
+                }
             }
             if (!file_skip && IsSync.exists) {
+                chunk_Size = 0x0;
+                IsChecked = false;
                 res.statusMessage = "Upload were rejected because the file name already exists '" + IsSync.file + "' ";
                 res.sendStatus(403).end();
-                IsChecked = false;
+                return false;
             }
             else {
-                _d.appendFile(path.join(upload_path, routa.data.name), Buffer.from(routa.data.chunk), {
+                _d.appendFile(path.join(upload_path, String(routa.data.name).concat(".upload")), Buffer.from(routa.data.chunk), {
                     encoding: file_encoding
                 }, function () {
                     res.end();
                     chunk_Size += routa.data.chunk.length;
                     if (chunk_Size == routa.data.size) {
-                        const client = { post: (data) => { } };
-                        chunk_Size = 0x0;
+                        const client = {
+                            post: (data) => { }
+                        };
                         IsChecked = false;
-                        call(false, {
-                            done: true,
-                            storage: upload_path,
-                            name: routa.data.name,
-                            size: _calc(routa.data.size)
-                        }, client);
+                        chunk_Size = 0x0;
+                        _d.rename(path.join(upload_path, String(routa.data.name).concat(".upload")), path.join(upload_path, String(routa.data.name)), function (err) {
+                            if (!err) {
+                                call(false, {
+                                    done: true,
+                                    storage: upload_path,
+                                    name: routa.data.name,
+                                    size: _calc(routa.data.size),
+                                    err: "null"
+                                }, client);
+                            }
+                            else {
+                                call(false, {
+                                    done: false,
+                                    storage: upload_path,
+                                    name: "null",
+                                    size: 0,
+                                    err: "File System Error : upload cannot be completed!"
+                                }, client);
+                            }
+                        });
                     }
                 });
             }
@@ -80,6 +112,8 @@ var formdata = (Options, call) => {
         let content = _su();
         res.set('Content-Type', 'text/javascript');
         if (content) {
+            chunk_Size = 0x0;
+            IsChecked = false;
             res.send(content);
         }
         else {
@@ -108,6 +142,14 @@ var formdata = (Options, call) => {
             });
         }
     });
+    var _cm = (a, t) => {
+        if (trust_mime_list.length == 0) {
+            return 2;
+        }
+        else {
+            return (t.filter(w => w == a).length > 0) ? 1 : 0;
+        }
+    };
     var _su = () => {
         const p_ = path.join(__dirname, "..", "tool", "browser.plug");
         if (_d.existsSync(p_)) {

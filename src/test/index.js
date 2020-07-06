@@ -5,11 +5,12 @@ const lf = require("../lib/largedata");
 const path = require("path");
 const app = express();
 const option = {
+    parameter_limit: "10000",
     encoding: 'binary',
     request_size: "1gb",
     overwrite: false,
-    storage: "./",
-    parameter_limit: "10000"
+    storage: "./upload",
+    mime_types: ["image/jpeg"]
 };
 app.set('views', path.join(__dirname, '../../', 'views'));
 app.set('view engine', 'ejs');

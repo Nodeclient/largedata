@@ -9,8 +9,8 @@
 - [x] multiple upload
 - [x] setting up network speed `(for only clients)`
 - [x] realtime stats
-- [x] overwrite mode
-
+- [x] overwrite
+- [x] mime-type
 
 > ***New Option :*** mime_types `accepts only your own mime-type list for upload.` 
 
