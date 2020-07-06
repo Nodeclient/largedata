@@ -19,7 +19,7 @@
 	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
      ]
 ```
-> ***default (empty array) :*** `if your set the empty , accepts all file types for upload.`
+> ***default (empty array) :*** `empty , accepts all file (known or unknown) types for upload.`
 
 
 Install - ```npm i largedata --save```
