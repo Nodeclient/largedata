@@ -11,7 +11,9 @@
 - [x] realtime stats
 - [x] overwrite mode
 
-> ***New Option : 1.0.7 (soon)*** mime_types `accepts only your own mime-type list for upload.`
+> 1.0.7(Next Update) 
+
+> ***New Option :*** mime_types `accepts only your own mime-type list for upload.` default (empty)
 ```js
      mime_types : [ 
      	"application/javascript", "application/json", "application/zip", 
@@ -19,7 +21,6 @@
 	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
      ]
 ```
-> ***default set (empty) :*** `accepts all file (known or unknown) types for upload.`
 
 
 Install - ```npm i largedata --save```
