@@ -11,6 +11,17 @@
 - [x] realtime stats
 - [x] overwrite mode
 
+> ***New Option : 1.0.7*** mime_types `accepts only your own mime-type list for upload.`
+```js
+     mime_types : [ 
+     	"application/javascript", "application/json", "application/zip", 
+     	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
+	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
+     ]
+```
+> ***default (empty array) :*** `if your set the empty , accepts all file types for upload.`
+
+
 Install - ```npm i largedata --save```
 
 ### Sample server project:
@@ -24,11 +35,12 @@ const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
-    encoding:'binary',  //file encoder
+    encoding:'binary',   //file encoder
     request_size:"1gb", //for each blob
     storage:"./",      //uploaded files
     parameter_limit:"10000",
-    overwrite: true   // default:true
+    overwrite: true,  // default:true
+    mime_types : []  // (empty) accepts all
 }
 ```
 
