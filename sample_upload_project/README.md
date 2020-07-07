@@ -1,6 +1,6 @@
 ### Install
 
-[![Image from Gyazo](https://i.gyazo.com/0c4b952a6679dbec1efc90637d7caae2.png)](https://gyazo.com/0c4b952a6679dbec1efc90637d7caae2)
+[![Image from Gyazo](https://i.gyazo.com/a5abe2d269e118a6d1a61d94346e50bc.png)](https://gyazo.com/a5abe2d269e118a6d1a61d94346e50bc)
 
 ```sh
 $ git clone https://github.com/Nodeclient/largedata.git
