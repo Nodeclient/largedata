@@ -13,7 +13,7 @@
 - [x] overwrite
 - [x] mime-type
 
-Install - ```npm i largedata --save```
+**Install** - ```npm i largedata --save```
 
 ### Sample server project:
 [Sample Project](https://git.io/JJUck) or ***@github***/largedata/sample_upload_project/
