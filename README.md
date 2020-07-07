@@ -4,6 +4,7 @@
 ![npm](https://img.shields.io/npm/v/largedata.svg?style=flat) ![npm](https://img.shields.io/npm/dt/largedata) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 ![logo](https://raw.githubusercontent.com/Nodeclient/largedata/master/image.png)
+[![Image from Gyazo](https://i.gyazo.com/38fa7ce28575659edb83fdbe3e71b255.gif)](https://gyazo.com/38fa7ce28575659edb83fdbe3e71b255)
 
 ## Features
 - [x] getting form input element and data attributes
@@ -12,18 +13,6 @@
 - [x] realtime stats
 - [x] overwrite
 - [x] mime-type
-
-> ***New Option :*** mime_types `accepts only your own mime-type list for upload.` 
-
-> default (empty)
-```js
-     mime_types : [ 
-     	"application/javascript", "application/json", "application/zip", 
-     	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
-	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
-     ]
-```
-
 
 Install - ```npm i largedata --save```
 
@@ -204,5 +193,15 @@ const option = {
 
 
 > **overwrite** mode (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
+
+>  mime_types `accepts only your own mime-type list for upload.` 
+```js
+//EXAMPLE MIME LIST
+     mime_types : [ 
+     	"application/javascript", "application/json", "application/zip", 
+     	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
+	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
+     ]
+```
 
 Build: `Node.js,Ts,Js,WebApi`
