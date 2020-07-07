@@ -89,7 +89,7 @@ const option = {
 ```
 ---
 
-### HTML - client.html
+### HTML - client.ejs or (html)
 ```html
 <! DOCTYPE html >
 <html>
