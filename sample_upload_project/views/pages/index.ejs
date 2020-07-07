@@ -1,55 +1,95 @@
-<% 'use strict' %>
-<! DOCTYPE html >
+<!DOCTYPE html>
 <html>
+<head>
+<style>
+*{margin:0;padding:0}.bg{background-color:#2b3246;color:#fff}.content{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);border:4px solid #2e50a6;background-color:#fff;width:490px;height:400px;color:#5981e5;box-shadow:1px 3px 7px #233d94;border-radius:7px}.content .title p{position:absolute;margin:0;padding-top:4px;font-family:'Montserrat Subrayada',sans-serif;font-size:16px;cursor:default;user-select:none;text-shadow:1px 1px 0 #6f8ddb4f;border-bottom:2px groove #e6e7eca1;width:100%;text-transform:uppercase;text-align:center;padding-bottom:4px;color:#2b58ca}.footer{position:fixed;display:flow-root;background-color:#2e50a6;width:100%;height:98px;top:calc(100% - 100px);border-top:2px groove #e6e7eca1}.footer .button:hover{background-color:#274aac;color:#e2e7ffd2;border:1px groove #277de0}.footer .button:active{background-color:#676c8b;color:#a1a1a1}.list{position:relative;background-color:#e7eaee4d;color:#7ec1ff;top:30px;height:269px;overflow-y:scroll;overflow-x:hidden}.list .item{font-family:'Montserrat Subrayada',sans-serif;display:flow-root;padding:5px;background-color:#033297de;text-shadow:1px 0 1px #2d323f70;text-justify:initial;border-bottom:2px groove #25252528;padding-top:3px;font-weight:400;font-size:15px}.list .item .size{position:relative;float:right;color:#f5ffd3}.list .item .name{position:relative;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:350px}.footer .loader{position:absolute;background-color:#277de0;width:0%;height:100%;transition:.5s;max-width:100%;min-width:0;box-shadow:-4px -10px 55px #1e84f975;border-bottom-left-radius:5px;border-bottom-right-radius:5px}.footer .l_percent{font-family:Anton,sans-serif;font-weight:600;font-size:40px;position:absolute;padding:5px;color:#f1fbe5db;width:auto;user-select:none}.footer .button{position:relative;float:right;top:4px;right:2px;font-family:'Montserrat Subrayada',sans-serif;width:100px;height:92px;background-color:#277de0;border:1px groove #abc3df00;color:#fff;border-bottom-right-radius:5px;transition:.2s}.footer .button label{text-align:center;line-height:calc(100% - -90px);text-shadow:1px 0 1px #2d323f70;font-weight:600;user-select:none;z-index:99}.UploadButton{opacity:0;overflow:hidden;position:absolute;z-index:-1}.UploadButton+label{width:100px;height:93px;font-size:1.25em;display:inline-block;cursor:pointer;z-index:99}.button label span{position:absolute;color:rgba(255,255,255,.63);font-size:11px;z-index:0;text-align:center;line-height:calc(-80% - -26px);top:25px;width:70%;height:20px}.footer .l_uploading{position:absolute;font-family:'Montserrat Subrayada',sans-serif;z-index:100;font-size:13px;left:7px;top:75px;color:#ffe13f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:350px;user-select:none;text-shadow:1px 0 0 #2d323f70}.footer .l_timeleft{position:absolute;font-family:'Montserrat Subrayada',sans-serif;left:6px;top:52px;font-weight:600;font-size:12px;text-transform:uppercase;color:#abd5fff0;user-select:none;text-shadow:-.5px .7px 0 #1e3b8ac2}.footer .l_network{position:absolute;font-family:'Montserrat Subrayada',sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;top:calc(100% - 46px);width:135px;padding-left:calc(100% - 367px);color:#acf5f9;user-select:none;float:right;text-shadow:1px 1px 0 #2d323f70}.error{position:absolute;font-family:'Montserrat Subrayada',sans-serif;top:calc(50% - 273px);left:calc(50% - 245px);height:62px;width:490px}.error .title{color:#f8ac1f;font-weight:600;font-size:12px;text-shadow:1px 0 1px #2d323f70;user-select:none}.error .errlist{overflow-y:auto;overflow-x:hidden;width:100%;height:50px;-ms-overflow-style:none;scrollbar-width:none;transition:max-height .5s ease-out}.error .errlist .message{background-color:#df155228;padding:3px;text-transform:uppercase;font-size:12px}
+</style>
 <title><%- title %></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<center>
-  <form id="my_upload">
-    <input type='range' id="your_range"  /><br>
-    <input type='text' style="width: 200px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br><br>
-    <input type='file' multiple />
-      <input type="button" id="send" value="Submit"/>
-      <br>
-	<div id='output_net'>Network Output</div><br>
-	<div id='output_upl'>Upload Output</div><br>
-	<div id='output_dta'>FormData Output</div><br>
-	<div id='output_div'>Error</div><br>
-	
-  </form>
-  </center>
+</head>
+<body class="bg">
+    <div class="content">
+        <div class="title"><p>formdata & upload</p></div> 
+        <div class="list"></div>
+        <div class="footer">
+            <div class="loader"></div>
+            <div class="l_percent"></div>
+            <div class="l_network"></div>
+            <div class="l_uploading"></div>
+            <div class="l_timeleft"></div>
+            <div class="button">
+				<form id="my_upload">
+					<input type="file" id="file" class="UploadButton" multiple />
+					<label for="file"><span>select file</span>Upload</label>
+				</form>
+            </div>
+        </div>
+    </div>
+    <div class="error">      
+        <div class="title">ERROR</div>
+        <div class="errlist"></div>
+    </div>
+</body>
 </html>
 
 <script>
-    jQuery('#send').click(function(){
-      // OUTPUT DIV
-        var info_output = document.getElementById("output_div");
-		var output_netw  = document.getElementById("output_net");
-		var output_upld  = document.getElementById("output_upl");
-		var output_dtaf  = document.getElementById("output_dta");
-      //OPTIONS
-      const Options = {
-        form_id : "my_upload",    // Set your form id
-        speed : "30000",           // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
-        post_url : "/upload",     // your api url
-      }
+$(document).ready(function(){
+    //OPTIONS
+    const Options = {
+       form_id : "my_upload",    // Set your form id
+       speed : "10000",          // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
+       post_url : "/upload",     // your api url
+    }
+	SendForm = new LargeData(Options);
+	  
+    var inputs = document.querySelectorAll( '.UploadButton' );
+        [].forEach.call(inputs, function(input) {
+            var label= input.nextElementSibling,lVal = label.innerHTML;
+                input.addEventListener( 'change', function( e ) {
+					//RESET DATA 
+					var fn = '';
+					$(".loader").css("width","0%");
+					$(".l_percent").text("0%");
+					$(".l_uploading").text("");
+                    fn = "total "+this.files.length+" files"
+					//SEND INPUT FILES
+				  SendForm.upload(function( upload_stats , network_stats , err ) {
+					//OUTPUT 
+					if(typeof upload_stats.code != "undefined"){
+						if(upload_stats.code=="0004"){
+							$(".loader").css("width", upload_stats.percent+"%");
+							$(".l_percent").text(upload_stats.percent+"%");
+							$(".l_uploading").text(upload_stats.name);
+						} else if(upload_stats.code=="0002"){
+							var l = $('.list');
+							l.append('<div class="item"><div class="size">'+upload_stats.size.size+'</div><div class="name">✔️ '+upload_stats.name+'</div></div>')
+							l.scrollTop(l.prop("scrollHeight"));
+						} else if(upload_stats.code=="0003"){
+							$(".l_percent").text("FINISHED");
+					}
+						
+					}
+					if(typeof network_stats.network != "undefined"){
+						$(".l_network").text(network_stats.network.speed +" "+ network_stats.network.prefix);
+						$(".l_timeleft").text("Hour: "+ network_stats.time.hour +" Minute: "+network_stats.time.minute);
+					}
+					
+					if(typeof err != "undefined"){
+					    var d = $('.errlist');
+						d.append('<div class="message">❌ '+err.error+'</div>')
+						d.scrollTop(d.prop("scrollHeight"));
+					}
+					
+				  })
+                if(fn){
+                    label.querySelector( 'span' ).innerHTML = fn;
+                } else {
+                label.innerHTML = lVal;
+            }
+        });
+    });
 
-      SendForm = new LargeData(Options);
-
-      // SEND INPUT FILES
-      SendForm.upload(function( upload_stats , network_stats , err ) {
-        //OUTPUT DIV
-        info_output.innerHTML = JSON.stringify(err)
-		output_netw.innerHTML =  JSON.stringify(network_stats)
-		output_upld.innerHTML =  JSON.stringify(upload_stats)
-	  })
-
-      // SEND INPUT ELEMENTS
-      SendForm.fields(function(form_data,err) {
-        //OUTPUT DIV
-        output_dtaf.innerHTML = JSON.stringify(form_data)
-		//info_output.innerHTML =  JSON.stringify(err)
-      }) 
-  });
+});
 </script>
 
 <script src="largedata.min.js"></script>

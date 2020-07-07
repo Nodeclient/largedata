@@ -1,0 +1,55 @@
+<% 'use strict' %>
+<! DOCTYPE html >
+<html>
+<title><%- title %></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<center>
+  <form id="my_upload">
+    <input type='range' id="your_range"  /><br>
+    <input type='text' style="width: 200px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br><br>
+    <input type='file' multiple />
+      <input type="button" id="send" value="Submit"/>
+      <br>
+	<div id='output_net'>Network Output</div><br>
+	<div id='output_upl'>Upload Output</div><br>
+	<div id='output_dta'>FormData Output</div><br>
+	<div id='output_div'>Error</div><br>
+	
+  </form>
+  </center>
+</html>
+
+<script>
+    jQuery('#send').click(function(){
+      // OUTPUT DIV
+        var info_output = document.getElementById("output_div");
+		var output_netw  = document.getElementById("output_net");
+		var output_upld  = document.getElementById("output_upl");
+		var output_dtaf  = document.getElementById("output_dta");
+      //OPTIONS
+      const Options = {
+        form_id : "my_upload",    // Set your form id
+        speed : "10000",           // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
+        post_url : "/upload",     // your api url
+      }
+
+      SendForm = new LargeData(Options);
+
+      // SEND INPUT FILES
+      SendForm.upload(function( upload_stats , network_stats , err ) {
+        //OUTPUT DIV
+        info_output.innerHTML = JSON.stringify(err)
+		    output_netw.innerHTML =  JSON.stringify(network_stats)
+		    output_upld.innerHTML =  JSON.stringify(upload_stats)
+	  })
+
+      // SEND INPUT ELEMENTS
+        SendForm.fields(function(form_data,err) {
+          //OUTPUT DIV
+          output_dtaf.innerHTML = JSON.stringify(form_data)
+		  info_output.innerHTML =  JSON.stringify(err)
+       }) 
+  });
+</script>
+
+<script src="largedata.min.js"></script>
