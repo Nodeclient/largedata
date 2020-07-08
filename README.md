@@ -13,7 +13,7 @@
 - [x] overwrite
 - [x] mime-type
 
-**1.0.8** New function : ".reject( <sting> )" , now you can allowed or rejected client connection to on the server side.
+**1.0.8** New function `.reject("<sting>")`  now you can allowed or rejected client connection to on the server side.
 
 ```javascript
 //Example Usage in Express Application
@@ -48,7 +48,7 @@ const option = {
 ```javascript
   // Express Application
   app.use('/upload',ld.router,function (req, res, next) {
-    //ld.reject()
+    //ld.reject("Permission denied !")
     res.render("pages/index",{ title:"render your upload html" });
   }) 
 ```
