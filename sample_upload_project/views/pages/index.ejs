@@ -37,7 +37,7 @@ $(document).ready(function(){
     //OPTIONS
     const Options = {
        form_id : "my_upload",    // Set your form id
-       speed : "10000",          // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
+       speed : "8000",          // Set network speed - type(Kbps) -> 1000Kbps = 1Mbps
        post_url : "/upload",     // your api url
     }
 	SendForm = new LargeData(Options);
@@ -48,6 +48,7 @@ $(document).ready(function(){
                 input.addEventListener( 'change', function( e ) {
 					//RESET DATA 
 					var fn = '';
+					document.getElementById("file").disabled = true;
 					$(".loader").css("width","0%");
 					$(".l_percent").text("0%");
 					$(".l_uploading").text("");
@@ -66,6 +67,7 @@ $(document).ready(function(){
 							l.scrollTop(l.prop("scrollHeight"));
 						} else if(upload_stats.code=="0003"){
 							$(".l_percent").text("FINISHED");
+							document.getElementById("file").disabled = false;
 					}
 						
 					}
@@ -78,6 +80,7 @@ $(document).ready(function(){
 					    var d = $('.errlist');
 						d.append('<div class="message">❌ '+err.error+'</div>')
 						d.scrollTop(d.prop("scrollHeight"));
+						document.getElementById("file").disabled = false;
 					}
 					
 				  })
