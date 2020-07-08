@@ -13,6 +13,16 @@
 - [x] overwrite
 - [x] mime-type
 
+**1.0.8** New function : ".reject()" , now you can reject the client formdata requests (access control)
+
+```javascript
+//Example Usage in Express Application
+app.use('/upload' , largedata.router, function (req, res, next) {
+   largedata.reject() // client formdata request was rejected ...
+     res.render("pages/index",{ title:"test" });
+})
+```
+  
 **Install** - ```npm i largedata --save```
 
 ### Example upload project:
@@ -38,6 +48,7 @@ const option = {
 ```javascript
   // Express Application
   app.use('/upload',ld.router,function (req, res, next) {
+    //ld.reject()
     res.render("pages/index",{ title:"render your upload html" });
   }) 
 ```
