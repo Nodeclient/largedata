@@ -13,12 +13,12 @@
 - [x] overwrite
 - [x] mime-type
 
-**1.0.8** New function : ".reject()" , now you can reject the client formdata requests (access control)
+**1.0.8** New function : ".reject()" , now you can allowed or rejected client connection to on the server side.
 
 ```javascript
 //Example Usage in Express Application
 app.use('/upload' , largedata.router, function (req, res, next) {
-   largedata.reject() // client formdata request was rejected ...
+   largedata.reject("your deny message here") // client formdata request was rejected ...
      res.render("pages/index",{ title:"test" });
 })
 ```
