@@ -13,7 +13,7 @@
 - [x] overwrite
 - [x] mime-type
 
-**1.0.8** New function `.reject("<sting>")`  now you can allowed or rejected client connection to on the server side.
+**1.0.8** New function `.reject("<sting>")`  now you can allowed or rejected client formdata to on the server side.
 
 ```javascript
 //Example Usage in Express Application
