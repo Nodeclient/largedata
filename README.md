@@ -15,8 +15,8 @@
 
 **Install** - ```npm i largedata --save```
 
-### Sample server project:
-[Sample Project](https://git.io/JJUck) or ***@github***/largedata/sample_upload_project/
+### Example upload project:
+[Example Project](https://git.io/JJUck) or ***@github***/largedata/sample_upload_project/
 
 ---
 Node.Js -  ```server.js```
@@ -61,7 +61,7 @@ const option = {
   })
 ```
 ---
-### server.js "files,fields" sample output
+### server.js (files,fields) sample output
 `formdata (files) paramater :`
 ```js
  {
@@ -89,7 +89,7 @@ const option = {
 ```
 ---
 
-### HTML - client.ejs or (html)
+### SAMPLE html form 
 ```html
 <! DOCTYPE html >
 <html>
@@ -134,7 +134,7 @@ const option = {
 <script src="largedata.min.js"></script>
 ```
 
-### HTML - client.html (network,upload,error) stats sample output
+### HTML - client (network,upload,error) stats output
 `Uploaded files list`
 
 ```js
@@ -189,7 +189,6 @@ const option = {
  > if you had the path issue on the browser side then you can try changing "script src tag" to full path like `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
 > network **speed** a valid only on the upload proccess. This option is unusable from for the sending form elements.
-
 
 > **overwrite** mode (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
 
