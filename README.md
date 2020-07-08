@@ -89,7 +89,7 @@ const option = {
 ```
 ---
 
-### SAMPLE html form 
+### HTML - sample form
 ```html
 <! DOCTYPE html >
 <html>
