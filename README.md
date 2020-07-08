@@ -13,12 +13,12 @@
 - [x] overwrite
 - [x] mime-type
 
-**1.0.8** New function : ".reject()" , now you can allowed or rejected client connection to on the server side.
+**1.0.8** New function : ".reject( <sting> )" , now you can allowed or rejected client connection to on the server side.
 
 ```javascript
 //Example Usage in Express Application
 app.use('/upload' , largedata.router, function (req, res, next) {
-   largedata.reject("your deny message here") // client formdata request was rejected ...
+   largedata.reject("Permission denied !")  // client was rejected ... 
      res.render("pages/index",{ title:"test" });
 })
 ```
