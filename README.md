@@ -200,7 +200,7 @@ const option = {
 
 > **overwrite** (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
 
->  mime_types (default:empty) `accepts only your own mime-type list for upload.` 
+> **mime_types**  (default:empty) `accepts only your own mime-type list for upload.` 
 ```js
    //EXAMPLE LIST
      mime_types : [ 
