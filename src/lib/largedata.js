@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formdata = exports.router = void 0;
+exports.reject = exports.formdata = exports.router = void 0;
 const _d = require("fs");
 const path = require("path");
 const express = require("express");
 let existMap = new Map();
-var ufjs = null;
+var browserPlug = null;
+var deny = { incoming: false, msg: "" };
 const router = express.Router({
     strict: true
 });
@@ -15,13 +16,18 @@ var IsSync = {
     exists: false,
     temp: false
 };
+var reject = (t) => {
+    deny.msg = t;
+    deny.incoming = true;
+};
+exports.reject = reject;
 var formdata = (Options, call) => {
     var chunk_Size = 0x0;
     var IsChecked = false;
     var routaMap = [];
     var upload_path = Options.storage || path.join(process.cwd(), "/upload/");
-    var max_chunk_size = Options.request_size || "100gb";
-    var parameter_Limit = Options.parameter_limit || "500000";
+    var max_chunk_size = Options.request_size || "10gb";
+    var parameter_Limit = Options.parameter_limit || "50000";
     var file_encoding = Options.encoding || "binary";
     var file_skip = (Options.overwrite == false) ? false : true;
     var trust_mime_list = Options.mime_types || [];
@@ -35,6 +41,11 @@ var formdata = (Options, call) => {
     }));
     router.post('/', function (req, res) {
         const routa = req.body;
+        if (deny.incoming == true) {
+            res.statusMessage = deny.msg || "Permission denied !";
+            res.sendStatus(403).end();
+            return false;
+        }
         if (typeof routa.field != "undefined") {
             if (typeof routa.data == "undefined") {
                 const client = {
@@ -153,15 +164,15 @@ var formdata = (Options, call) => {
     var _su = () => {
         const p_ = path.join(__dirname, "..", "tool", "browser.plug");
         if (_d.existsSync(p_)) {
-            if (ufjs) {
-                return ufjs;
+            if (browserPlug) {
+                return browserPlug;
             }
             else {
-                ufjs = _d.readFileSync(p_, {
+                browserPlug = _d.readFileSync(p_, {
                     encoding: 'utf8',
                     flag: 'r'
                 });
-                return ufjs;
+                return browserPlug;
             }
         }
         else {

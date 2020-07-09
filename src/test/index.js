@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ limit: option.request_size, extended: true }));
 app.use(express.json({ limit: option.request_size }));
 app.use('/upload', lf.router, function (req, res, next) {
+    lf.reject("Permission denied !"); // client was rejected ... 
     res.render("pages/index", { title: "test" });
 });
 lf.formdata(option, function (fields, files, client) {
