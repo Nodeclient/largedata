@@ -16,9 +16,9 @@
 **1.0.8** New function `.reject("<sting>")`  now you can allowed or rejected client formdata to on the server side.
 
 ```javascript
-//Example Usage in Express Application
+//reject function example usage in express application
 app.use('/upload' , largedata.router, function (req, res, next) {
-   largedata.reject("Permission denied !")  // client was rejected ... 
+   largedata.reject("Permission denied !")  // client rejected ... 
      res.render("pages/index",{ title:"test" });
 })
 ```
