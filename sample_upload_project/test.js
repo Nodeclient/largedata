@@ -23,6 +23,7 @@ const app = express();
   }) 
 
   app.use('/upload',ld.router,function (req, res, next) {
+	ld.reject("Permission denied !") 
     res.render("pages/index",{ title:"your upload test" });
   })  
 
@@ -34,13 +35,14 @@ const app = express();
       for (const items of fields) {
         console.log( items );
       }
+	  
+		client.post({
+			hello: "Good Morning",
+			language_test: "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
+		}); // send data-object from server to client
+
     }
     
-    client.post({
-        hello: "Good Morning",
-        language_test: "testing some different languages :> Günaydın, доброе утро, शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
-    }); // send data-object from server to client
-
   })
 
   app.listen(3000, function () {
