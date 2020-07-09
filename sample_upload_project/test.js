@@ -23,7 +23,7 @@ const app = express();
   }) 
 
   app.use('/upload',ld.router,function (req, res, next) {
-	ld.reject("Permission denied !") 
+	//ld.reject("Permission denied !") 
     res.render("pages/index",{ title:"your upload test" });
   })  
 
