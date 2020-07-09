@@ -194,18 +194,15 @@ const option = {
 }
 ```
 
- > network **time-left** : does not calculate realtime! is calculated only one-time  
-    `why time-left is designed one-time ? because it takes more resources to calculate this in real time than it does now, this is best way for perform.`
-
- > if you had the path issue on the browser side then you can try changing "script src tag" to full path like `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
+ > if you had the js file path issue on the browser side then you can try changing to full path like `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
 > network **speed** a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
-> **overwrite** mode (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
+> **overwrite** (default: true)  `if set the "false"  ,you can't upload file with same filename also client upload attempt is rejected too .` 
 
->  mime_types `accepts only your own mime-type list for upload.` 
+>  mime_types (default:empty) `accepts only your own mime-type list for upload.` 
 ```js
-//EXAMPLE MIME LIST
+   //EXAMPLE LIST
      mime_types : [ 
      	"application/javascript", "application/json", "application/zip", 
      	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
