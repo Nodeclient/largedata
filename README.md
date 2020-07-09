@@ -198,9 +198,9 @@ const option = {
 
 > network **speed** a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
-> **overwrite** (default: true)  `you can't upload file with same filename also client upload attempt is rejected too..` set: "false"
+> **overwrite** (default: true)  `you can't upload file with same filename also client upload attempt is rejected too..` type: boolean
 
-> **mime_types**  (default:empty) `accepts only your own mime-type list for upload.` set: "array" 
+> **mime_types**  (default:empty) `accepts only your own mime-type list for upload.` type: "array" 
 ```js
    //EXAMPLE LIST
      mime_types : [ 
