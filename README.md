@@ -10,18 +10,10 @@
 - [x] multiple upload
 - [x] setting up network speed `(for only clients)`
 - [x] realtime stats
-- [x] overwrite
-- [x] mime-type
+- [x] overwrite mode
+- [x] limited mime-types
+- [x] reject formdata
 
-**1.0.8** New function `.reject("<string>")`  now you can allowed or rejected client formdata to on the server side.
-
-```javascript
-//reject function example usage in express application
-app.use('/upload' , largedata.router, function (req, res, next) {
-   largedata.reject("Permission denied !")  // client rejected ... 
-     res.render("pages/index",{ title:"test" });
-})
-```
   
 **Install** - ```npm i largedata --save```
 
@@ -208,6 +200,15 @@ const option = {
      	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
 	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
      ]
+```
+**.reject("<string>")**  now you can allowed or rejected client formdata to on the server side.
+
+```javascript
+//reject function example usage in express application
+app.use('/upload' , largedata.router, function (req, res, next) {
+   largedata.reject("Permission denied !")  // client rejected ... 
+     res.render("pages/index",{ title:"test" });
+})
 ```
 
 Build: `Node.js,Ts,Js,WebApi`
