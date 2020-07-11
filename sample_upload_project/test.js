@@ -9,7 +9,7 @@ const app = express();
 		storage:"./upload",      // your file is saved in this folder
 		parameter_limit:"10000", // express.js option
 		overwrite: false ,
-		 mime_types : [ ]
+		 mime_types : [ ]        // example( "application/javascript", "application/json", "application/zip" )
 	}
 	
   app.set('views', path.join(process.cwd(),'views') )
