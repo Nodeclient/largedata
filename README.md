@@ -2,8 +2,10 @@
 
 ### formdata and file uploads.
 ![npm](https://img.shields.io/npm/v/largedata.svg?style=flat) ![npm](https://img.shields.io/npm/dt/largedata) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-
 [![Image from Gyazo](https://i.gyazo.com/38fa7ce28575659edb83fdbe3e71b255.gif)](https://gyazo.com/38fa7ce28575659edb83fdbe3e71b255)
+
+## User interface desing
+**Madalina Taina**
 
 ## Features
 - [x] getting form input element and data attributes
