@@ -4,6 +4,7 @@
 <title><%- title %></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <center>
+<p>debug mode:</p>
   <form id="my_upload">
     <input type='range' id="your_range"  /><br>
     <input type='text' style="width: 200px;" name="test_input" custom="your custom type" data-large="your data attr" data-test="some numbers 123456" /><br><br>
