@@ -6,7 +6,7 @@
 [![Image from Gyazo](https://i.gyazo.com/38fa7ce28575659edb83fdbe3e71b255.gif)](https://gyazo.com/38fa7ce28575659edb83fdbe3e71b255)
 
 ## User interface desing
-**Madalina Taina**
+**Madalina Taina** [@MadyTzn](https://twitter.com/MadyTzn)   
 
 ## Features
 - [x] getting form input element and data attributes
