@@ -5,7 +5,7 @@
 
 [![Image from Gyazo](https://i.gyazo.com/38fa7ce28575659edb83fdbe3e71b255.gif)](https://gyazo.com/38fa7ce28575659edb83fdbe3e71b255)
 
-## User interface desing
+### interface graphic design
 **Madalina Taina** [@MadyTzn](https://twitter.com/MadyTzn)   
 
 ## Features
