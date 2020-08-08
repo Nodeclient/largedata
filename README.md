@@ -33,7 +33,7 @@ const ld = require('largedata').default;
 const option = { 
     encoding:'binary',   //file encoder
     request_size:"1gb", //for each blob
-    storage:"./",      //uploaded files
+    storage:"./",      //upload files location
     parameter_limit:"10000",
     overwrite: true,  // default:true
     mime_types : []  // (empty) accepts all
