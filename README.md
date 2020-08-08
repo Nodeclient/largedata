@@ -16,11 +16,11 @@
 - [x] reject formdata
 
 
+**Install** - ```npm i largedata --save```
+
+
 ### interface graphic desing
 **Madalina Taina** [@MadyTzn](https://twitter.com/MadyTzn)  
-  
-  
-**Install** - ```npm i largedata --save```
 
 ### Example upload project:
 [Example Project](https://git.io/JJUck) or ***@github***/largedata/sample_upload_project/
