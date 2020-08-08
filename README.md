@@ -67,7 +67,7 @@ const option = {
   })
 ```
 ---
-### server.js (files,fields) sample output
+### server.js (files,fields) output
 `formdata (files) paramater :`
 ```js
  {
@@ -95,7 +95,7 @@ const option = {
 ```
 ---
 
-### HTML - sample form
+### HTML - example form
 ```html
 <! DOCTYPE html >
 <html>
@@ -141,7 +141,7 @@ const option = {
 ```
 
 ### HTML - client (network,upload,error) stats output
-`Uploaded files list`
+`Uploaded files (output)`
 
 ```js
 { 
@@ -154,7 +154,7 @@ const option = {
     ]
 }
 ```
-`FormData (response)`
+`FormData (output)`
 ```js
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
@@ -163,7 +163,7 @@ const option = {
 }
 ```
 
-`Upload stat (realtime)`
+`Upload stat (output)`
 
 ```js
 { 
@@ -173,7 +173,7 @@ const option = {
    "percent":"20"
 }
 ```
-`Network stat (static)`
+`Network stat (output)`
 
 ```js
 { 
