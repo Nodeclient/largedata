@@ -143,7 +143,7 @@ const option = {
 ```
 
 ### HTML - client (network,upload,error) stats output
-`Uploaded files (output)`
+`Upload done (output)`
 
 ```js
 { 
@@ -156,7 +156,7 @@ const option = {
     ]
 }
 ```
-`FormData (output)`
+`Your custom data from server to client (output)`
 ```js
 { "code":"0005","msg":"SUCCESS","response":{
 	"hello":"Good Morning",
@@ -165,7 +165,7 @@ const option = {
 }
 ```
 
-`Upload stat (output)`
+`Upload current process(output)`
 
 ```js
 { 
@@ -175,7 +175,7 @@ const option = {
    "percent":"20"
 }
 ```
-`Network stat (output)`
+`Network (output)`
 
 ```js
 { 
@@ -191,13 +191,19 @@ const option = {
 }
 ```
 
- > if you had the js file path issue on the browser side then you can try changing to full path like `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
+ > **Javascript** 
+if you had the js file path issue on the browser side then you can try changing to full path like 
+`http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
-> network **speed** a valid only on the upload proccess. This option is unusable from for the sending form elements.
+> **network speed** 
+	a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
-> **overwrite** (default: true)  `you can't upload file with same filename also client upload attempt is rejected too` type: boolean
+> **overwrite** (default: true)  type: "boolean"
+	`you can't upload file with same filename also client upload attempt is rejected too`
 
-> **mime_types**  (default:empty) `accepts only your own mime-type list for upload.` type: "array" 
+> **mime_types**  (default:empty) type: "array" 
+	`accepts only your own mime-type list for upload.`
+
 ```js
    //EXAMPLE LIST
      mime_types : [ 
@@ -206,7 +212,8 @@ const option = {
 	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
      ]
 ```
-**.reject("<string>")**  now you can allowed or rejected client formdata to on the server side.
+**.reject("your message")**  
+	now you can allowed or rejected client formdata to on the server side.
 
 ```javascript
 //reject function example usage in express application
