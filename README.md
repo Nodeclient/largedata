@@ -13,7 +13,7 @@
 - [x] realtime stats
 - [x] overwrite mode
 - [x] limited mime-types
-- [x] reject formdata
+- [x] reject client formdata
 
 
 **Install** - ```npm i largedata --save```
