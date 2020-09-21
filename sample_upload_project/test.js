@@ -5,7 +5,7 @@ const app = express();
 
 	const option = { 
 		encoding:'binary',       // file encode type
-		request_size:"1gb",      // for each blob "not a total size"
+		request_size:"1gb",      // for each blob "each part"
 		storage:"./upload",      // your file is saved in this folder
 		parameter_limit:"10000", // express.js option
 		overwrite: true ,
