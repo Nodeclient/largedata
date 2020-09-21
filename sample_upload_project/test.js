@@ -7,9 +7,9 @@ const app = express();
 		encoding:'binary',       // file encode type
 		request_size:"1gb",      // for each blob "each part"
 		storage:"./upload",      // your file is saved in this folder
-		parameter_limit:"10000", // express.js option
+		parameter_limit:"10000", 
 		overwrite: true ,
-		 mime_types : [ ]        // example( "application/javascript", "application/json", "application/zip" )
+		 mime_types : [ ]        // example : "application/javascript", "application/json", "application/zip"
 	}
 	
   app.set('views', path.join(process.cwd(),'views') )
