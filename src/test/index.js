@@ -5,19 +5,16 @@ const lf = require("../lib/largedata");
 const path = require("path");
 const app = express();
 const option = {
-    parameter_limit: "10000",
     encoding: 'binary',
-    request_size: "1gb",
     overwrite: false,
     storage: "./upload",
     mime_types: ["image/jpeg"]
 };
 app.set('views', path.join(__dirname, '../../', 'views'));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ limit: option.request_size, extended: true }));
-app.use(express.json({ limit: option.request_size }));
+app.use(express.urlencoded({ extended: true }));
 app.use('/upload', lf.router, function (req, res, next) {
-    lf.reject("Permission denied !"); // client was rejected ... 
+    // lf.reject("Permission denied !")  // client was rejected ... 
     res.render("pages/index", { title: "test" });
 });
 lf.formdata(option, function (fields, files, client) {

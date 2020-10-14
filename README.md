@@ -228,4 +228,5 @@ app.use('/upload' , largedata.router, function (req, res, next) {
 if you had the js file path issue on the browser side then you can try changing to full path like 
 `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
+
 Build: `Node.js,Ts,Js,WebApi`

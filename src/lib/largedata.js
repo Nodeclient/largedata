@@ -26,8 +26,8 @@ var formdata = (Options, call) => {
     var IsChecked = false;
     var routaMap = [];
     var upload_path = Options.storage || path.join(process.cwd(), "/upload/");
-    var max_chunk_size = Options.request_size || "10gb";
-    var parameter_Limit = Options.parameter_limit || "50000";
+    var max_chunk_size = "1gb";
+    var parameter_Limit = "900000";
     var file_encoding = Options.encoding || "binary";
     var file_skip = (Options.overwrite == false) ? false : true;
     var trust_mime_list = Options.mime_types || [];
