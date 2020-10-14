@@ -194,6 +194,7 @@ const option = {
 }
 ```
 
+
 > **network speed** 
 	a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
@@ -208,10 +209,11 @@ const option = {
      mime_types : [ 
      	"application/javascript", "application/json", "application/zip", 
      	"audio/mpeg", "image/gif", "image/jpeg","image/png", "text/css", 
-	"text/html", "text/php","text/plain" , "your mimtypes here" , "etc.." 
+	"text/html", "text/php","text/plain" , "your mime type here" , "etc.." 
      ]
 ```
-**.reject("your message")**  
+
+> **.reject("your message")**  
 	now you can allowed or rejected client formdata to on the server side.
 
 ```javascript
@@ -221,7 +223,8 @@ app.use('/upload' , largedata.router, function (req, res, next) {
      res.render("pages/index",{ title:"test" });
 })
 ```
- > **Note:** 
+
+> **Note:** 
 if you had the js file path issue on the browser side then you can try changing to full path like 
 `http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
