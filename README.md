@@ -12,8 +12,8 @@
 - [x] setting up network speed `(for only clients)`
 - [x] realtime stats
 - [x] overwrite mode
-- [x] limited mime-types
-- [x] reject client formdata
+- [x] limited upload (mime-type)
+- [x] reject option
 
 
 **Install** - ```npm i largedata --save```
@@ -33,19 +33,19 @@ const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
-    encoding:'binary',   //file encoder
-    request_size:"1gb", //for each blob
-    storage:"./",      //upload files location
-    parameter_limit:"10000",
-    overwrite: true,  // default:true
-    mime_types : []  // (empty) accepts all
+    encoding:'binary',  // file encoder
+    storage:"./",       // your upload folder location
+    overwrite: true,    // file overwrite option
+    mime_types : []     // accepts only your trusted list (empty accepts all)
 }
 ```
 
 ```javascript
   // Express Application
   app.use('/upload',ld.router,function (req, res, next) {
-    //ld.reject("Permission denied !")
+    /* sample reject option
+    	ld.reject("Permission denied !")
+    */
     res.render("pages/index",{ title:"render your upload html" });
   }) 
 ```
@@ -59,13 +59,16 @@ const option = {
     if(fields){ // HTML input elements & attributes
       for (const items of fields) {
         console.log( items );
-      }
-    }
-	  client.post({ 
+	
+	 client.post({ 
 		  hello: "Good Morning",
 		  language_test: "testing some different languages :> Günaydın, доброе утро, 
 		  शुभ प्रभात ,добрий ранок, おはようございます, 早上好, buổi sáng tốt lành"
 	  });  // send data-object from server to client (status:0005)
+	  
+      }
+    }
+
   })
 ```
 ---
@@ -191,15 +194,11 @@ const option = {
 }
 ```
 
- > **Javascript** 
-if you had the js file path issue on the browser side then you can try changing to full path like 
-`http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
-
 > **network speed** 
 	a valid only on the upload proccess. This option is unusable from for the sending form elements.
 
 > **overwrite** (default: true)  type: "boolean"
-	`you can't upload file with same filename also client upload attempt is rejected too`
+	`if your set the "false", upload attempt is rejected.`
 
 > **mime_types**  (default:empty) type: "array" 
 	`accepts only your own mime-type list for upload.`
@@ -222,5 +221,8 @@ app.use('/upload' , largedata.router, function (req, res, next) {
      res.render("pages/index",{ title:"test" });
 })
 ```
+ > **Note:** 
+if you had the js file path issue on the browser side then you can try changing to full path like 
+`http://<your_host>/<api_url>/largedata.min.js` or semi url `<api_url>/largedata.min.js`
 
 Build: `Node.js,Ts,Js,WebApi`
