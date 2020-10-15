@@ -36,7 +36,7 @@ const option = {
     encoding:'binary',  // file encoder
     storage:"./",       // your upload folder location
     overwrite: true,    // file overwrite option
-    mime_types : []     // accepts only your trusted list (empty accepts all)
+    mime_types : []     // accepts only selected files type (empty accepts all)
 }
 ```
 
