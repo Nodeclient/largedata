@@ -33,10 +33,10 @@ const ld = require('largedata').default;
 ```
 ```javascript
 const option = { 
-    encoding:'binary',  // file encoder
-    storage:"./",       // your upload folder location
-    overwrite: true,    // file overwrite option
-    mime_types : []     // accepts only selected files type (empty accepts all)
+    encoding:'binary',  // type [string]  : file encoder
+    storage:"./",       // type [string]  : your upload folder location
+    overwrite: true,    // type [boolean] : file overwrite option
+    mime_types : []     // type [Array]   : accepts only selected files (empty: accepts all)
 }
 ```
 
