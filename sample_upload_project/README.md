@@ -2,6 +2,7 @@
 ```sh
 $ git clone https://github.com/Nodeclient/largedata.git
 $ cd largedata/sample_upload_project
+$ mkdir ./upload
 $ npm install -d
 $ node test.js
 ```
