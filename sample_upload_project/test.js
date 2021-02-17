@@ -7,7 +7,7 @@ const app = express();
 		 encoding:'binary',       // encode type
 		 storage:"./upload",      // your storage folder
 		 overwrite: false ,       // file overwrite
-		 mime_types : [ ]         // upload limit option
+		 mime_types : [ ]         // upload file types
 	}
 	
   app.set('views', path.join(process.cwd(),'views') )
