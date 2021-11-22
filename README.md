@@ -12,8 +12,8 @@
 - [x] setting up network speed `(for only clients)`
 - [x] realtime stats
 - [x] overwrite mode
-- [x] limited upload (mime-type)
-- [x] reject option
+- [x] restricted file mime-types
+- [x] reject option for server side
 
 
 **Install** - ```npm i largedata --save```
