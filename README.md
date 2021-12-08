@@ -41,7 +41,7 @@ const option = {
 ```
 
 ```javascript
-  // Express Application
+  // Express.js
   app.use('/upload',ld.router,function (req, res, next) {
     /* sample reject option
     	ld.reject("Permission denied !")
@@ -51,7 +51,6 @@ const option = {
 ```
 
 ```javascript
-  //Largedata  Application
   ld.formdata(option,function (fields,files,client){
     if(files){ // Input files (It's only return the successful uploads)
      console.log(files);
